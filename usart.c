@@ -19,9 +19,14 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "usart.h"
+#include <stdio.h>
 
 /* USER CODE BEGIN 0 */
-
+int fputc(int c, FILE * f)
+{
+  HAL_UART_Transmit(&huart1, (uint8_t *)&c, 1, 1000);//发送串口
+  return c;
+}
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart1;
