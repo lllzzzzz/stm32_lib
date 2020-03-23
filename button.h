@@ -3,6 +3,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "lz_debug.h"
 #include "stdint.h"
+#include "main.h"
 
 typedef enum button_state
 {
@@ -25,6 +26,7 @@ typedef struct button
   struct
   {
     uint8_t change : 1;
+    uint8_t down : 1;
   } flg;
 
   button_cfg_t cfg;
