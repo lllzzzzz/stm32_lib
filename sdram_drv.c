@@ -46,7 +46,7 @@ void sdram_init_seq(SDRAM_HandleTypeDef *hsdram)
   }
 
   /* Configuration register */
-  cmd_struct.CommandMode = FMC_SDRAM_CMD_CLK_ENABLE;
+  cmd_struct.CommandMode = FMC_SDRAM_CMD_LOAD_MODE;
   cmd_struct.CommandTarget = FMC_SDRAM_CMD_TARGET_BANK1;
   cmd_struct.AutoRefreshNumber = 1;
   cmd_struct.ModeRegisterDefinition = SDRAM_MODEREG_BURST_LENGTH_1 |
@@ -99,7 +99,7 @@ void sdram_read(uint32_t addr, uint8_t *buf, uint32_t buf_len)
   * @param  
   * @retval 
   */
-uint16_t testsram[250000] __attribute__((at(0XC0000000))); //测试用数组
+//uint16_t testsram[250000] __attribute__((at(0XC0000000))); //测试用数组
 
 void fsmc_sdram_test(void)
 {
